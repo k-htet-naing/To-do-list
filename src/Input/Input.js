@@ -1,12 +1,23 @@
 import React,{ useState } from 'react';
 import '../Input/Input.css'
+import { v4 } from 'uuid';
 
-export default function Input(){
+export default function Input({text, setText}){
 
     const [type, setType] = useState('');
 
     const handleClick = ()=> {
-        console.log(type);
+        if(!type) return
+        let updateLists = [
+            ...text,
+            {
+                id: v4(),
+                task: type,
+                completed: false
+            }
+        ]
+        setText(updateLists);
+        console.log(updateLists);
         setType('');
     }
 
