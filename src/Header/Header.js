@@ -1,9 +1,7 @@
 import React from 'react';
 
+const title = 'To Do Lists';
+
 export default function Header() {
-    return (
-        <div>
-            <h1>Pikachu</h1>
-        </div>
-    )
+    return <h1> {title} </h1>
 }
